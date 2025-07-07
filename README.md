@@ -35,7 +35,7 @@ const result = ConditionBuilder<number>
 
 Without ConditionBuilder (using ternary)
 
-```
+```typescript
 
 const result = false ? 2 : true ? 1 : 3;
 
