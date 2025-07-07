@@ -97,3 +97,5 @@ export class ConditionBuilder<U> {
     return orElseFn();
   };
 }
+
+const result = 42;
