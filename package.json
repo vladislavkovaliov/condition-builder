@@ -1,0 +1,46 @@
+{
+  "name": "condition-builder",
+  "version": "1.0.0",
+  "private": false,
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "types",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "format": "npx prettier . --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vlad (v.v.kovaliov@gmail.com)",
+  "license": "MIT",
+  "keywords": [],
+  "description": "",
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": true
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladislavkovaliov/condition-builder.git"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "semantic-release": "^24.2.6"
+  }
+}
