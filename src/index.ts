@@ -1,4 +1,4 @@
-export class Node<T> {
+class Node<T> {
   public value: T;
   public next: Node<T> | null;
 
@@ -8,7 +8,7 @@ export class Node<T> {
   }
 }
 
-export class LinkedList<T> {
+class LinkedList<T> {
   public head: Node<T> | null;
 
   constructor() {
