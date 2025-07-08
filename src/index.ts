@@ -79,7 +79,9 @@ export class ConditionBuilder<U> {
     return this;
   };
 
-  build = (orElseFn: () => U): U => {
+  build = (orElseFn?: () => U): U | null => {
+
+
     let cursor = this.queue.head;
 
     while (cursor) {
@@ -92,6 +94,10 @@ export class ConditionBuilder<U> {
       }
 
       cursor = cursor.next;
+    }
+
+    if (orElseFn === undefined) {
+      return null;
     }
 
     return orElseFn();
