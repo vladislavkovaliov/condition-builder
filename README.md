@@ -7,7 +7,7 @@ A tiny JavaScript utility that helps you write clean, readable multi-way conditi
 - the order of conditions matters — the first condition that matches will be used
 - you can optionally provide a fallback using build(() => defaultValue)
 - if no condition matches and no fallback is provided, an error will be thrown to alert you
-- the build() method never returns null
+- the build() method is empty it will return null
 
 ## Why use it?
 
