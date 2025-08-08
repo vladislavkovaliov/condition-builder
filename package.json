@@ -2,9 +2,16 @@
   "name": "condition-builder",
   "version": "0.0.0-development",
   "private": false,
-  "main": "./dist/index.js",
-  "types": "./types/index.d.ts",
-  "type": "module",
+   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "types",
@@ -12,7 +19,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -rf dist && rm -rf types && tsc",
+    "build": "rm -rf dist && tsup",
     "assert": "node --experimental-strip-types src/__tests__/index.test.ts ",
     "commit": "cz",
     "semantic-release": "semantic-release",
@@ -50,6 +57,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "semantic-release": "^24.2.6"
+    "semantic-release": "^24.2.6",
+    "tsup": "^8.5.0"
   }
 }
