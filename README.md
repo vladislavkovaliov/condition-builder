@@ -39,7 +39,7 @@ Without ConditionBuilder (using ternary)
 
 const result = false ? 2 : true ? 1 : 3;
 
-// -------
+// ---
 
 let result = -1;
 
