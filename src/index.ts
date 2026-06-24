@@ -70,7 +70,7 @@ export class ConditionBuilder<U> {
     this.queue = new LinkedList();
   }
 
-  on = (fn: () => boolean, result: U): this => {
+  on = (fn: () => boolean, result: U | (() => U)): this => {
     this.queue.add({
       fn: fn,
       result: result,
@@ -79,9 +79,9 @@ export class ConditionBuilder<U> {
     return this;
   };
 
-  build = (orElseFn?: () => U): U | null => {
-
-
+  build(): U | null;
+  build(orElseFn: () => U): U;
+  build(orElseFn?: () => U): U | null {
     let cursor = this.queue.head;
 
     while (cursor) {
@@ -90,7 +90,7 @@ export class ConditionBuilder<U> {
       const fnResult = fn();
 
       if (fnResult) {
-        return result;
+        return typeof result === 'function' ? (result as () => U)() : result;
       }
 
       cursor = cursor.next;

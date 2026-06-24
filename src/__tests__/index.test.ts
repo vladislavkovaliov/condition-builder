@@ -48,4 +48,22 @@ describe('Condition Builder', () => {
 
         expect(result).toEqual(2);
     });
+
+    test("should work with thunk (lazy) values", () => {
+        const result = new ConditionBuilder<number>()
+            .on(() => true, () => 42)
+            .on(() => false, () => 99)
+            .build(() => 0);
+
+        expect(result).toEqual(42);
+    });
+
+    test("should support mixed direct and thunk values", () => {
+        const result = new ConditionBuilder<number>()
+            .on(() => false, 1)
+            .on(() => true, () => 2)
+            .build(() => 3);
+
+        expect(result).toEqual(2);
+    });
 });
