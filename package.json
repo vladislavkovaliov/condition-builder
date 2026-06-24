@@ -1,6 +1,6 @@
 {
   "name": "wi-condition-builder",
-  "version": "0.0.0-development",
+  "version": "1.8.0",
   "private": false,
    "type": "module",
   "main": "./dist/index.cjs",
@@ -34,30 +34,17 @@
     "builder"
   ],
   "description": "",
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": true
-        }
-      ],
-      "@semantic-release/github"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vladislavkovaliov/condition-builder.git"
   },
+  "engines": {
+    "node": "24"
+  },
   "devDependencies": {
     "prettier": "3.6.2",
-    "vitest": "^3.2.4"
-  },
-  "dependencies": {
     "semantic-release": "^24.2.6",
-    "tsup": "^8.5.0"
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.4"
   }
 }
