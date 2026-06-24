@@ -1,8 +1,8 @@
 {
   "name": "wi-condition-builder",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "private": false,
-   "type": "module",
+  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
