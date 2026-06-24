@@ -63,7 +63,7 @@ class LinkedList<T> {
 export class ConditionBuilder<U> {
   private queue: LinkedList<{
     fn: () => boolean;
-    result: U;
+    result: U | (() => U);
   }>;
 
   constructor() {
